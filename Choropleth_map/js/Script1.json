@@ -23,7 +23,7 @@
 									"calculate": "datum.Confirmed + 0.1", "as": "Confirmed Cases"
 								}
 							],
-				"mark": {"type": "geoshape","stroke":"gray"},
+				"mark": {"type": "geoshape","fill":"null","stroke":"gray"},
 				"encoding": {
 								"color": {
 												"field": "Confirmed Cases",
