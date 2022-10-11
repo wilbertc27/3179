@@ -1,5 +1,5 @@
 Country/Region,Continent,Population,TotalCases,NewCases,TotalDeaths,NewDeaths,TotalRecovered,NewRecovered,ActiveCases,"Serious,Critical",TotalCases_1M_pop,Deaths/1M pop,TotalTests,Tests/1M pop,WHO Region
-China,Asia,1451917230,86783,,4656,,78869,,3258,,60,deaths/1m,,,Western Pacific
+China,Asia,1451917230,86783,,4656,,78869,,3258,,60,3,,,Western Pacific
 United States of America,North America,331198130,5032179,,162804,,2576668,,2292707,18296,15194,492,63139605,190640,Americas
 Brazil,South America,212710692,2917562,,98644,,2047660,,771258,8318,13716,464,13206188,62085,Americas
 India,Asia,1381344997,2025409,,41638,,1377384,,606387,8944,1466,30,22149351,16035,South-EastAsia
