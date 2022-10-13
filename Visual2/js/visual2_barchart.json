@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple pie chart with labels.",
+    "width":600,
+    "height":400,
+    "data": {
+      "values": [
+        {"category": "Total Deaths", "value": 15538,"WHO_REGION":"Africa"},
+        {"category": "Total Recovered", "value": 604326,"WHO_REGION":"Africa"},
+        {"category": "Active Cases", "value": 232162,"WHO_REGION":"Africa"},
+        {"category": "Total Deaths", "value": 384637,"WHO_REGION":"Americas"},
+        {"category": "Total Recovered", "value": 6259733,"WHO_REGION":"Americas"},
+        {"category": "Active Cases", "value": 3808482,"WHO_REGION":"Americas"},
+        {"category": "Total Deaths", "value": 42376,"WHO_REGION":"EasternMediterranean"},
+        {"category": "Total Recovered", "value": 1340094,"WHO_REGION":"EasternMediterranean"},
+        {"category": "Active Cases", "value": 223396,"WHO_REGION":"EasternMediterranean"},
+        {"category": "Total Deaths", "value": 215564,"WHO_REGION":"Europe"},
+        {"category": "Total Recovered", "value": 2047446,"WHO_REGION":"Europe"},
+        {"category": "Active Cases", "value": 566295,"WHO_REGION":"Europe"},
+        {"category": "Total Deaths", "value": 50624,"WHO_REGION":"South-EastAsia"},
+        {"category": "Total Recovered", "value": 1621081,"WHO_REGION":"South-EastAsia"},
+        {"category": "Active Cases", "value": 755194,"WHO_REGION":"South-EastAsia"},
+        {"category": "Total Deaths", "value": 3975,"WHO_REGION":"WesternPacific"},
+        {"category": "Total Recovered", "value": 182319,"WHO_REGION":"WesternPacific"},
+        {"category": "Active Cases", "value": 80820,"WHO_REGION":"WesternPacific"}
+      ]
+    },
+    "transform":[{"filter": "datum['WHO_REGION'] == WHO_Region_Selection"}],
+    "params":[
+                  {
+                  "name": "WHO_Region_Selection",
+                  "bind": {
+                            "input": "select",
+                            "options": [
+                                          "Africa",
+                                          "Americas",
+                                          "EasternMediterranean",
+                                          "Europe",
+                                          "South-EastAsia",
+                                          "WesternPacific"
+                                        ],
+                            "labels":[
+                                          "Africa",
+                                          "Americas",
+                                          "EasternMediterranean",
+                                          "Europe",
+                                          "South-EastAsia",
+                                          "WesternPacific"
+                                      ],
+                            "name": "WHO Region:"
+                          }
+                  }
+                ],
+      "mark": {"type": "arc", "innerRadius": 70}
+    ,
+    "encoding": {
+      "color": {"field": "category", "type": "nominal"},
+      "theta": {"field": "value", "type": "quantitative", "stack": "normalize"},
+      "tooltip":[
+                  {"field": "WHO_REGION", "type": "nominal",  "title":"Who Region"},
+                  {"field": "category", "type": "nominal","title":"Category"},
+                  {"field": "value", "type": "quantitative", "format": ",","title":"Value"}]
+    }
+  }
