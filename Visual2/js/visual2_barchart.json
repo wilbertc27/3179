@@ -64,4 +64,11 @@
                   {"field": "category", "type": "nominal","title":"Category"},
                   {"field": "value", "type": "quantitative", "format": ",","title":"Value"}]
     }
+   "config": {
+  "style": {
+    "cell": {
+      "stroke": "transparent"
+    }
   }
+}
+}
