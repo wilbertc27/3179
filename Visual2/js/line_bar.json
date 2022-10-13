@@ -1,0 +1,52 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title":{"text":"Cummulative Confirmed Cases and Daily New Cases in Malaysia and Australia"},
+    "background":"lightyellow",
+    "data":{"url":"https://raw.githubusercontent.com/wilbertc27/3179/main/Visual2/data/full_grouped.csv"},
+    "transform":[{"filter": {"field": "Country/Region", "oneOf": ["Australia","Malaysia"]}},
+                {"filter": "Country_Selection == null ||datum['Country/Region'] == Country_Selection"}],
+    "params":[
+                  {
+                  "name": "Country_Selection",
+                  "bind": {
+                            "input": "select",
+                            "options": [
+                                          null,
+                                          "Australia",
+                                          "Malaysia"
+                                        ],
+                            "labels":[
+                                          "Show All",
+                                          "Australia",
+                                          "Malaysia"
+                                      ],
+                            "name": "Country Region:"
+                          }
+                  }
+                ],
+    "vconcat": [{ "width": 600,
+                  "height": 300,
+                  "mark": {"type":"line"},
+                  "encoding": {"x": {"field": "Date", "type": "temporal", "scale": {"domain": {"param": "brush"}},"axis":{"title": "","grid":false}},
+                               "y": {"field": "Confirmed", "type": "quantitative","axis":{"title":"Cummulative Confirmed Cases","grid":false}},
+                               "color":{"field":"Country/Region","type":"nominal"},
+                              "tooltip":[{"field":"Date","type":"temporal","title":"Date"},
+                                         {"field":"Confirmed","type":"quantitative",
+                                          "title":"Confirmed"}
+                                        ]
+                              }
+                },
+                {
+                  "width": 600,
+                  "height": 80,
+                  "mark":  {"type": "bar", "cornerRadiusEnd": 4,"width":3},
+                  "params": [{"name": "brush", "select": {"type": "interval","encodings": ["x"]}}],
+                  "encoding": {"x": {"field": "Date", "type": "temporal","axis":{"grid":false}},
+                               "y": {"field": "New cases","type": "quantitative",
+                                     "axis": {"tickCount": 4,"grid": false}},
+                                "color":{"field":"Country/Region","type":"nominal"},
+                                     "tooltip":[{"field":"Date","type":"temporal","title":"Date"},
+                                                {"field":"New cases","type":"quantitative",
+                                                 "title":"New cases"}]}
+                }]
+}
