@@ -37,9 +37,12 @@
       <!-- end pure grid group -->
 
       <!-- pure grid group -->
+    `<div class="pure-g">
         <div class="pure-u-1-1">
           <div id="vis1" class="vis-container"></div>
         </div>
+     </div>
+    
         <div class="pure-g">
            <div class="pure-u-1-1">
               <p>COVID-19 Global Confirmed Cases show the total cases of each 
@@ -50,29 +53,42 @@
             </div>
           </div>
       <!-- end pure grid group -->
-
+    
+    <!-- pure grid group -->
     <div class="pure-g">
-      <div class="pure-u-2-3">
+      <div class="pure-u-1-2">
         <div id="vis2" class="vis-container"></div>
       </div>
-      <div class="pure-u-1-3">
-        <div class="description description-right">
-          <h2>Death Confirmed Case Ratio</h2>
-          <p>Death Confirmed Case Ratio show the death and confirmed case ratio of each country. 
-          The annotation in the chart show the country in Asia where they are belong to Western Pacific WHO Region.</p>
-        </div>
+       <div class="pure-u-1-2">
+        <div id="vis3" class="vis-container"></div>
       </div>
     </div>
+   <!-- end pure grid group -->
+    
+           <div class="pure-g">
+           <div class="pure-u-1-1">
+              <p>COVID-19 Global Confirmed Cases show the total cases of each 
+                country from 22 Jan to 27 Jul 2020 per 1 Millilon Population.
+             From the chart, we can observe that from this time period, Chile has 
+                the highest cases among all the countries following by 
+             United States of Americas</p>
+            </div>
+          </div>
 
   <script type="text/javascript">
     var spec1 = "js/Script1.json";
     var spec2= "js/bubbleplot.json";
+    var spec3= "js/bubbleplot.json";
 
     vegaEmbed('#vis1', spec1, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
     vegaEmbed('#vis2', spec2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    
+    vegaEmbed('#vis3', spec3, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>
