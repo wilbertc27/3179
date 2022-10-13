@@ -24,7 +24,7 @@
                           }
                   }
                 ],
-    "vconcat": [{ "width": 600,
+    "vconcat": [{ "width": 800,
                   "height": 300,
                   "mark": {"type":"line"},
                   "encoding": {"x": {"field": "Date", "type": "temporal", "scale": {"domain": {"param": "brush"}},"axis":{"title": "","grid":false}},
@@ -37,7 +37,7 @@
                               }
                 },
                 {
-                  "width": 600,
+                  "width": 800,
                   "height": 80,
                   "mark":  {"type": "bar", "cornerRadiusEnd": 4,"width":3},
                   "params": [{"name": "brush", "select": {"type": "interval","encodings": ["x"]}}],
