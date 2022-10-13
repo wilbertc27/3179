@@ -1,3 +1,4 @@
+
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": { "text": "Death Confirmed Case Ratio" },
@@ -36,7 +37,7 @@
                                       "Asia",
                                       "Oceania"
                                     ],
-                          "name": "Continent Selection: "
+                          "name": "Continent: "
                         }
                 },
                 {
@@ -61,7 +62,7 @@
                                         "South-EastAsia",
                                         "WesternPacific"
                                     ],
-                          "name": "WHO Region Selection: "
+                          "name": "WHO Region: "
                         }
                 }
               ],
@@ -71,7 +72,7 @@
                             "field": "TotalCases",
                             "type": "quantitative",
                             "title": "Confirmed Cases",
-                            "axis": {"tickCount": 7},
+                            "axis": {"tickCount": 7,"grid":false},
                             "scale": {"type": "log", "domain": [1, 10000000]}
                           },
                     "y": 
@@ -79,7 +80,7 @@
                             "field": "TotalDeaths",
                             "type": "quantitative",
                             "title": "Death Cases",
-                            "axis": {"tickCount": 6},
+                            "axis": {"tickCount": 6,"grid":false},
                             "scale": {"type": "log", "domain": [1, 10000000]}
                           }
                   },
@@ -153,3 +154,4 @@
               }
           ]
 }
+
