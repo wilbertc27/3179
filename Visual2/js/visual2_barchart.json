@@ -63,7 +63,7 @@
                   {"field": "WHO_REGION", "type": "nominal",  "title":"Who Region"},
                   {"field": "category", "type": "nominal","title":"Category"},
                   {"field": "value", "type": "quantitative", "format": ",","title":"Value"}]
-    }
+    },
    "config": {
   "style": {
     "cell": {
