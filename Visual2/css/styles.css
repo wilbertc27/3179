@@ -52,11 +52,12 @@ h1 {
 
 .description-right {
     padding-left: 20px;
-    padding-top: 200px:
+    padding-top: 150px;
 }
 
 .description-left {
     padding-right: 20px;
+    padding-top: 150px;
 }
 
 .pure-g {
