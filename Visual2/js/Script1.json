@@ -67,5 +67,6 @@
 								}
             	}
 
-    		]
+    		],
+    "config": {"view": {"stroke": null}}
 }
