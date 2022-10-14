@@ -1,6 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": { "text": "Death Confirmed Case Ratio" },
     "background":"lightyellow",
     "width": 630,
     "height": 550,
