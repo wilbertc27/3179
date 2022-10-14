@@ -1,6 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title":{"text":"Cummulative Confirmed Cases and Daily New Cases in Malaysia and Australia"},
     "background":"lightyellow",
     "data":{"url":"https://raw.githubusercontent.com/wilbertc27/3179/main/Visual2/data/full_grouped.csv"},
     "transform":[{"filter": {"field": "Country/Region", "oneOf": ["Australia","Malaysia"]}},
