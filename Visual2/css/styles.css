@@ -39,7 +39,7 @@ body {
 }
 
 .page {
-    width: 1000px;
+    width: 1500px;
     background-color: lightyellow;
     margin: auto;
     padding: 30px;
@@ -55,8 +55,7 @@ h1 {
 }
 
 .description-right {
-    padding-left: 200px;
-    padding-top: 100px;
+    padding: 40px
 }
 
 .description-left {
