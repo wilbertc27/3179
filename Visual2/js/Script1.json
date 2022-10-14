@@ -2,7 +2,7 @@
 	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 	"title": "COVID-19 Global Confirmed Cases 22 Jan 2020 to 27 Jul 2020",
 	"background":"lightyellow",
-	"width": 1000,
+	"width": 1250,
 	"height": 500,
   "projection": {"type": "equalEarth"},
   "layer":[  {
