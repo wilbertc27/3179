@@ -67,5 +67,5 @@
             	}
 
     		],
-    "config": {"view": {"stroke": null}}
+    "config": {"view": {"stroke": null},"legend":{"direction":"horizontal","orient":"bottom"}}
 }
