@@ -4,10 +4,15 @@ body *{
 
 h1 {
     font-weight: 900;
+    font-size 40px
+}
+
+p {
+    font-size 20px
 }
 
 body {
-    background-color: lightgray;
+    background-color: lightyellow;
 }
 
 #idselect {
@@ -34,11 +39,10 @@ body {
 }
 
 .page {
-    width: 900px;
+    width: 1000px;
     background-color: lightyellow;
     margin: auto;
-    padding: 50px;
-    padding-top: 35px;
+    padding: 30px;
 }
 
 .vis-container {
@@ -61,7 +65,7 @@ h1 {
 }
 
 .pure-g {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .small-font {
