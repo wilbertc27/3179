@@ -3,7 +3,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": { "text": "Death Confirmed Case Ratio" },
     "background":"lightyellow",
-    "width": 350,
+    "width": 450,
     "height": 400,
     "data": {
                 "url":"https://raw.githubusercontent.com/wilbertc27/3179/main/Visual2/data/worldometer_data.csv"
