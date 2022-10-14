@@ -25,7 +25,7 @@
                   }
                 ],
     "vconcat": [{ "width": 1000,
-                  "height": 550,
+                  "height": 400,
                   "mark": {"type":"line"},
                   "encoding": {"x": {"field": "Date", "type": "temporal", "scale": {"domain": {"param": "brush"}},"axis":{"title": "","grid":false}},
                                "y": {"field": "Confirmed", "type": "quantitative","axis":{"title":"Cummulative Confirmed Cases","grid":false}},
@@ -38,7 +38,7 @@
                 },
                 {
                   "width": 1000,
-                  "height": 250,
+                  "height": 150,
                   "mark":  {"type": "bar", "cornerRadiusEnd": 4,"width":3},
                   "params": [{"name": "brush", "select": {"type": "interval","encodings": ["x"]}}],
                   "encoding": {"x": {"field": "Date", "type": "temporal","axis":{"grid":false}},
