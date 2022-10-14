@@ -5,35 +5,35 @@
     "height":550,
     "data": {
       "values": [
-        {"category": "Total Deaths", "value": 15538,"WHO_REGION":"Africa"},
-        {"category": "Total Recovered", "value": 604326,"WHO_REGION":"Africa"},
-        {"category": "Active Cases", "value": 232162,"WHO_REGION":"Africa"},
+        {"category": "Total Deaths", "value": 15538,"WHO Region":"Africa"},
+        {"category": "Total Recovered", "value": 604326,"WHO Region":"Africa"},
+        {"category": "Active Cases", "value": 232162,"WHO Region":"Africa"},
 
-        {"category": "Total Deaths", "value": 384637,"WHO_REGION":"Americas"},
-        {"category": "Total Recovered", "value": 6259733,"WHO_REGION":"Americas"},
-        {"category": "Active Cases", "value": 3808482,"WHO_REGION":"Americas"},
+        {"category": "Total Deaths", "value": 384637,"WHO Region":"Americas"},
+        {"category": "Total Recovered", "value": 6259733,"WHO Region":"Americas"},
+        {"category": "Active Cases", "value": 3808482,"WHO Region":"Americas"},
 
-        {"category": "Total Deaths", "value": 42376,"WHO_REGION":"EasternMediterranean"},
-        {"category": "Total Recovered", "value": 1340094,"WHO_REGION":"EasternMediterranean"},
-        {"category": "Active Cases", "value": 223396,"WHO_REGION":"EasternMediterranean"},
+        {"category": "Total Deaths", "value": 42376,"WHO Region":"EasternMediterranean"},
+        {"category": "Total Recovered", "value": 1340094,"WHO Region":"EasternMediterranean"},
+        {"category": "Active Cases", "value": 223396,"WHO Region":"EasternMediterranean"},
 
-        {"category": "Total Deaths", "value": 215564,"WHO_REGION":"Europe"},
-        {"category": "Total Recovered", "value": 2047446,"WHO_REGION":"Europe"},
-        {"category": "Active Cases", "value": 566295,"WHO_REGION":"Europe"},
+        {"category": "Total Deaths", "value": 215564,"WHO Region":"Europe"},
+        {"category": "Total Recovered", "value": 2047446,"WHO Region":"Europe"},
+        {"category": "Active Cases", "value": 566295,"WHO Region":"Europe"},
 
-        {"category": "Total Deaths", "value": 50624,"WHO_REGION":"South-EastAsia"},
-        {"category": "Total Recovered", "value": 1621081,"WHO_REGION":"South-EastAsia"},
-        {"category": "Active Cases", "value": 755194,"WHO_REGION":"South-EastAsia"},
+        {"category": "Total Deaths", "value": 50624,"WHO Region":"South-EastAsia"},
+        {"category": "Total Recovered", "value": 1621081,"WHO Region":"South-EastAsia"},
+        {"category": "Active Cases", "value": 755194,"WHO Region":"South-EastAsia"},
         
-        {"category": "Total Deaths", "value": 3975,"WHO_REGION":"WesternPacific"},
-        {"category": "Total Recovered", "value": 182319,"WHO_REGION":"WesternPacific"},
-        {"category": "Active Cases", "value": 80820,"WHO_REGION":"WesternPacific"}
+        {"category": "Total Deaths", "value": 3975,"WHO Region":"WesternPacific"},
+        {"category": "Total Recovered", "value": 182319,"WHO Region":"WesternPacific"},
+        {"category": "Active Cases", "value": 80820,"WHO Region":"WesternPacific"}
       ]
     },
-    "transform":[{"filter": "datum['category'] == WHO_Region_Selection||WHO_Region_Selection == null"}],
+    "transform":[{"filter": "datum['category'] == Cateogory_Selection||Cateogory_Selection == null"}],
     "params":[
                   {
-                  "name": "WHO_Region_Selection",
+                  "name": "Cateogory_Selection",
                   "bind": {
                             "input": "select",
                             "options": [null,
@@ -41,7 +41,7 @@
                                           "Total Recovered",
                                           "Active Cases"
                                         ],
-                            "labels":["show all",
+                            "labels":["Show All",
                                           "Total Deaths",
                                           "Total Recovered",
                                           "Active Cases"
@@ -57,9 +57,9 @@
   "encoding": {
     "theta": {"field": "value", "type": "quantitative", "stack": true},
     "radius": {"field": "value", "scale": {"type": "sqrt", "zero": true, "rangeMin": 30}},
-    "color": {"field": "WHO_REGION", "type": "nominal"},
+    "color": {"field": "WHO Region", "type": "nominal"},
     "tooltip":[
-                  {"field": "WHO_REGION", "type": "nominal",  "title":"Who Region"},
+                  {"field": "WHO Region", "type": "nominal",  "title":"WHO Region"},
                   {"field": "category", "type": "nominal","title":"Category"},
                   {"field": "value", "type": "quantitative", "format": ",","title":"Value"}]
     },
