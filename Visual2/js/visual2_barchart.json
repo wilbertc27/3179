@@ -2,8 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A simple pie chart with labels.",
     "background":"lightyellow",
-    "width":350,
-    "height":300,
+    "width":550,
+    "height":450,
     "data": {
       "values": [
         {"category": "Total Deaths", "value": 15538,"WHO_REGION":"Africa"},
