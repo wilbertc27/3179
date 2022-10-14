@@ -1,4 +1,3 @@
-
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": { "text": "Death Confirmed Case Ratio" },
@@ -26,7 +25,7 @@
                                         "Europe",
                                         "Africa",
                                         "Asia",
-                                        "Oceania"
+                                        "Australia/Oceania"
                                       ],
                           "labels":[
                                       "Show All",
@@ -35,7 +34,7 @@
                                       "Europe",
                                       "Africa",
                                       "Asia",
-                                      "Oceania"
+                                      "Australia/Oceania"
                                     ],
                           "name": "Continent: "
                         }
@@ -155,4 +154,3 @@
           ],
     "config": {"view": {"stroke": null}}
 }
-
