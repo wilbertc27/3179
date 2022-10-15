@@ -96,7 +96,7 @@
                                                  "title":"New cases"}]}
                 }],
     "config": {"view": {"stroke": null},"text":{"align": "center",
-				 "fontSize": 13.5,
+				 "fontSize": 15,
          "fontStyle": "italic",
          "lineBreak":"\n"}}
 }
