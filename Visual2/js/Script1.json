@@ -40,6 +40,7 @@
 								"color": {
 												"field": "TotalCases_1M_pop",
 												"type": "quantitative",
+                        "legend":{"title":"Cases per 1M Population"},
 												"scale": {"type": "threshold",
                                                         "domain": [5000,10000,15000],
                                                         "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
@@ -101,5 +102,5 @@
 			}
 		  }
         ],
-    "config": {"view": {"stroke": null},"legend":{"direction":"horizontal","orient":"bottom"}}
+    "config": {"view": {"stroke": null},"legend":{"direction":"horizontal","orient":"bottom","titleFontSize":15,"labelFontSize":15}}
 }
