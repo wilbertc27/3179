@@ -80,60 +80,6 @@
     </div>
     <!-- end pure grid group -->
     
-    <!-- pure grid group -->
-    <div class="pure-g">
-        <div class="pure-u-1-3" >
-          <div class="description description-left">
-            <h2 id = "c-align-borderless">Death, Recovered and Active for different WHO Region</h2>
-            <p id = "c-align-borderless">The graph show the death, recovered and active cases in different WHO Region. 
-              The graph show the death, recovered and active cases in different WHO Region.
-              The graph show the death, recovered and active cases in different WHO Region. 
-            The graph show the death, recovered and active cases in different WHO Region.
-            The graph show the death, recovered and active cases in different WHO Region.</p>
-          </div>
-        </div>
-      
-        <div class="pure-u-2-3" >
-          <div style="display: table; margin: 0 auto;">
-            <div id="vis3" class="vis-container"></div>
-          </div>
-        </div>
-      
-    </div>
-      
-   <!-- end pure grid group -->
-    
-   <!-- pure grid group -->
-        <div class="pure-g">
-          <div class="pure-u-1-1">
-            <div style="display: table; margin: 0 auto;">
-              <div id="vis4" class="vis-container"></div>
-            </div>
-          </div>
-        </div>
-     <!-- end pure grid group -->
-    
-     <!-- pure grid group -->
-        <div class="pure-g">
-          <div class="pure-u-1-4"></div>
-           <div class="pure-u-1-2">
-             <h2 id="c-align-borderless">Global Confirmed Cases from 22 Jan 2020 to 27 Jul 2020</h2>
-              <p id = "c-align-borderless">COVID-19 Global Confirmed Cases show the total cases of each 
-                country from 22 Jan to 27 Jul 2020 per 1 Millilon Population.
-                From the chart, we can observe that from this time period, <i><b>Chile</i></b> 
-                has the <b>highest</b> cases among all the countries followed by 
-                <i><b>United States of Americas</i></b></p>
-           </div>
-           <div class="pure-u-1-4"></div>
-         </div>
-      <!-- end pure grid group -->
-    
-      <div class="pure-g">
-         <div class="pure-u-1-1">
-             <p class="small-font" style="max-width:100ch; text-align: center;padding-top: 100px">© FIT 3179 Visualisation Assignment 2 Created by Wilbert Chong. Copyright reserved.</p>
-           </div>
-       </div>
-    
     
     
   </div> <!-- end page -->
@@ -141,8 +87,7 @@
   <script type="text/javascript">
     var spec1 = "js/Script1.json";
     var spec2= "js/bubbleplot.json";
-    var spec3= "js/visual2_barchart.json";
-    var spec4= "js/line_bar.json";
+
 
     vegaEmbed('#vis1', spec1, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -152,13 +97,6 @@
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
     
-    vegaEmbed('#vis3', spec3, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-    
-    vegaEmbed('#vis4', spec4, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
   </script>
 </body>
 
