@@ -98,5 +98,5 @@
     "config": {"view": {"stroke": null},"text":{"align": "center",
 				 "fontSize": 15,
          "fontStyle": "italic",
-         "lineBreak":"\n"}}
+         "lineBreak":"\n"},"axis":{"labelFontSize":15,"titleFontSize":15},"legend":{"labelFontSize":15,"titleFontSize":15}}
 }
