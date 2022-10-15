@@ -24,7 +24,7 @@
                   }
                 ],
     "vconcat": [
-      {"width": 1000,
+      {"width": 1550,
       "height": 500,
       "layer":[{
       "mark": {"type": "rule", "strokeDash": [9, 2], "size": 1,"color":"brown"},
@@ -82,7 +82,7 @@
                 }
     ]},
                 {
-                  "width": 1000,
+                  "width": 1550,
                   "height": 150,
                   "mark":  {"type": "bar", "cornerRadiusEnd": 4,"width":3},
                   "params": [{"name": "brush", "select": {"type": "interval","encodings": ["x"]}}],
