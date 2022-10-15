@@ -81,7 +81,7 @@
                             "field": "TotalCases",
                             "type": "quantitative",
                             "title": "Confirmed Cases",
-                            "axis": {"tickCount": 7,"grid":false},
+                            "axis": {"tickCount": 7,"grid":false,"labelFontSize":15,"titleFontSize":15},
                             "scale": {"type": "log", "domain": [1, 10000000]}
                           },
                     "y": 
@@ -89,7 +89,7 @@
                             "field": "TotalDeaths",
                             "type": "quantitative",
                             "title": "Death Cases",
-                            "axis": {"tickCount": 6,"grid":false},
+                            "axis": {"tickCount": 6,"grid":false,"labelFontSize":15,"titleFontSize":15},
                             "scale": {"type": "log", "domain": [1, 10000000]}
                           }
                   },
@@ -107,11 +107,11 @@
                                                     "domain": [1000000, 10000000, 50000000, 100000000,500000000],
                                                     "range": [10, 50, 150, 300, 500,600]
                                                   },
-                                        "legend": {"format": ".1s"}
+                                        "legend": {"format": ".1s","labelFontSize":15,"titleFontSize":15}
                                       },
                                   "color": {
                                   "field": "Continent", 
-                                  "scale": {"range": ["#4169E1","#C7A317","#7E354D","#6baed6","#FC6C85","#A74AC7"]}},       
+                                  "scale": {"range": ["#4169E1","#C7A317","#7E354D","#6baed6","#FC6C85","#A74AC7"]},"legend":{"labelFontSize":15,"titleFontSize":15}},       
                                 "opacity": {"value": 0.5},
                                 "tooltip": [
                                               {"field": "Country/Region", "type": "nominal","title":"Country"},
