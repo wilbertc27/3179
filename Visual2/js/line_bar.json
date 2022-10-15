@@ -26,7 +26,68 @@
     "vconcat": [
       {"width": 1000,
       "height": 400,
-      "mark": {"type":"line"},
+      "layer":[{
+      "mark": {"type": "rule", "strokeDash": [9, 2], "size": 1,"color":"brown"},
+      "encoding": {"x": {"datum": {"year": 2020,"month":"3","date":21,"hours":12}}}
+    },
+    {
+			"mark": {"type": "text",
+				 "align": "center",
+				 "baseline": "middle",
+				 "fontSize": 12.5,
+         "dx":-85,
+				 "fontStyle": "italic",
+				 "color":"black",
+         "lineBreak":"\n"
+				},
+                "encoding": {
+                                "text": {"value":"Australia surpassed Malaysia \non 21 March 2020"},
+                                "x": {"datum": {"year": 2020,"month":"3","date":21,"hours":12}}
+                            }
+
+              },{
+      "mark": {"type": "rule", "strokeDash": [9, 2], "size": 1,"color":"brown"},
+      "encoding": {"x": {"datum": {"year": 2020,"month":"5","date":22}}}
+    },{
+			"mark": {"type": "text",
+				 "align": "center",
+				 "baseline": "middle",
+				 "fontSize": 12.5,
+         "dx":-85,
+         "dy":80,
+				 "fontStyle": "italic",
+				 "color":"black",
+         "lineBreak":"\n"
+				},
+                "encoding": {
+                                "text": {"value":"Malaysia surpassed Australia \non 22 May 2020"},
+                                "x": {"datum": {"year": 2020,"month":"5","date":22}}
+                            }
+
+              },{
+      "mark": {"type": "rule", "strokeDash": [9, 2], "size": 1,"color":"brown"},
+      "encoding": {"x": {"datum": {"year": 2020,"month":"7","date":5,"hours":12}}}
+    },{
+			"mark": {"type": "text",
+				 "align": "center",
+				 "baseline": "middle",
+				 "fontSize": 12.5,
+         "dx":-85,
+         "dy":-70,
+				 "fontStyle": "italic",
+				 "color":"black",
+         "lineBreak":"\n"
+				},
+                "encoding": {
+                                "text": {"value":"Australia surpassed Malaysia \non 5 July 2020"},
+                                "x": {"datum": {"year": 2020,"month":"7","date":5,"hours":12}}
+                            }
+
+              },
+
+
+
+    {"mark": {"type":"line"},
                   "encoding": {"x": {"field": "Date", "type": "temporal", "scale": {"domain": {"param": "brush"}},"axis":{"title": "","grid":false}},
                                "y": {"field": "Confirmed", "type": "quantitative","axis":{"title":"Cummulative Confirmed Cases","grid":false}},
                                "color":{"field":"Country/Region","type":"nominal"},
@@ -36,7 +97,8 @@
                                           "title":"Confirmed"}
                                         ]
                               }
-                },
+                }
+    ]},
                 {
                   "width": 1000,
                   "height": 150,
