@@ -1,0 +1,165 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background":"lightyellow",
+    "width": 950,
+    "height": 600,
+    "data": {
+                "url":"https://raw.githubusercontent.com/wilbertc27/3179/main/Visual2/data/worldometer_data.csv"
+            },
+    "transform": [
+                    {"filter": "datum.TotalCases > 0"}, 
+                    {"filter": "datum.TotalDeaths> 0"},
+                    {"filter": "Continent_selection == null ||datum.Continent == Continent_selection"},
+                    {"filter": "WHO_Region_Selection == null ||datum['WHO Region'] == WHO_Region_Selection"},
+                    {"filter": "datum.Population > Population_Above"}
+                  ],
+    "params":[
+                {
+                "name": "Continent_selection",
+                "bind": {
+                          "input": "select",
+                          "options": [
+                                        null,
+                                        "North America",
+                                        "South America",
+                                        "Europe",
+                                        "Africa",
+                                        "Asia",
+                                        "Australia/Oceania"
+                                      ],
+                          "labels":[
+                                      "Show All",
+                                      "North America",
+                                      "South America",
+                                      "Europe",
+                                      "Africa",
+                                      "Asia",
+                                      "Australia/Oceania"
+                                    ],
+                          "name": "Continent: "
+                        }
+                },
+                {
+                "name": "WHO_Region_Selection",
+                "bind": {
+                          "input": "select",
+                          "options": [
+                                        null,
+                                        "Africa",
+                                        "Americas",
+                                        "EasternMediterranean",
+                                        "Europe",
+                                        "South-EastAsia",
+                                        "WesternPacific"
+                                      ],
+                          "labels":[
+                                        "Show All",
+                                        "Africa",
+                                        "Americas",
+                                        "EasternMediterranean",
+                                        "Europe",
+                                        "South-EastAsia",
+                                        "WesternPacific"
+                                    ],
+                          "name": "WHO Region: "
+                        }
+                },
+                {
+                  "name": "Population_Above",
+                  "value": 0,
+                  "bind": {
+                    "input": "range",
+                    "min": 0,
+                    "max": 100000000,
+                    "step": 1000000,
+                    "name": "Minimum Population: "}
+                }
+            ],
+    "encoding": {
+                    "x": 
+                          {
+                            "field": "TotalCases",
+                            "type": "quantitative",
+                            "title": "Confirmed Cases",
+                            "axis": {"tickCount": 7,"grid":false},
+                            "scale": {"type": "log", "domain": [1, 10000000]}
+                          },
+                    "y": 
+                          {
+                            "field": "TotalDeaths",
+                            "type": "quantitative",
+                            "title": "Death Cases",
+                            "axis": {"tickCount": 6,"grid":false},
+                            "scale": {"type": "log", "domain": [1, 10000000]}
+                          }
+                  },
+    "layer":[
+              {
+                "mark":"circle",
+                "encoding":{
+                              "size": 
+                                      {
+                                        "field": "Population",
+                                        "type": "quantitative",
+                                        "scale": 
+                                                  {
+                                                    "type": "threshold",
+                                                    "domain": [1000000, 10000000, 50000000, 100000000,500000000],
+                                                    "range": [10, 50, 150, 300, 500,600]
+                                                  },
+                                        "legend": {"format": ".1s"}
+                                      },
+                                  "color": {
+                                  "field": "Continent", 
+                                  "scale": {"range": ["#4169E1","#C7A317","#7E354D","#6baed6","#FC6C85","#A74AC7"]}},       
+                                "opacity": {"value": 0.5},
+                                "tooltip": [
+                                              {"field": "Country/Region", "type": "nominal","title":"Country"},
+                                              {"field": "TotalCases", "type": "quantitative", "format": ",","title":"Total Cases"},
+                                              {"field": "TotalDeaths", "type": "quantitative", "format": ",","title":"Total Death"},
+                                              {
+                                                "field": "TotalCases_1M_pop",
+                                                "type": "quantitative",
+                                                "format": ".2f",
+                                                "title":"Total Cases per 1M population"
+                                              }
+                                            ]
+                            }
+              },
+              {
+			"mark": {"type": "text",
+				 "align": "center",
+				 "baseline": "middle",
+				 "fontSize": 15,
+         "dx":-5,
+				 "fontStyle": "italic",
+				 "color":"black",
+				 "fontWeight":"bold"
+				},
+                "encoding": {
+                                "text": {"field": "Country/Region", "type": "nominal"},
+                                "color": {"value": "black"},
+                                "opacity": {
+                                              "condition": {
+                                                              "test": "datum['WHO Region'] == 'WesternPacific'&& datum['Continent'] == 'Asia'",
+                                                              "value": 1
+                                                            },
+                                                "value": 0
+                                            },
+                                "tooltip": [
+                                              {"field": "Country/Region", "type": "nominal",  "title":"Country"},
+                                              {"field": "TotalCases", "type": "quantitative", "format": ",","title":"Total Cases"},
+                                              {"field": "TotalDeaths", "type": "quantitative", "format": ",","title":"Total Death"},
+                                              {
+                                                "field": "TotalCases_1M_pop",
+                                                "type": "quantitative",
+                                                "format": ".2f",
+                                                "title":"Total Cases per 1M population"
+                                              }
+                                            ]
+                            }
+
+              }
+          ],
+    "config": {"view": {"stroke": null}}
+}
