@@ -44,7 +44,7 @@
                             "field": "TotalCases",
                             "type": "quantitative",
                             "title": "Confirmed Cases",
-                            "axis": {"tickCount": 7,"grid":false},
+                            "axis": {"tickCount": 7},
                             "scale": {"type": "log", "domain": [1, 10000000]}
                           },
                     "y": 
@@ -52,7 +52,7 @@
                             "field": "TotalDeaths",
                             "type": "quantitative",
                             "title": "Death Cases",
-                            "axis": {"tickCount": 6,"grid":false},
+                            "axis": {"tickCount": 6},
                             "scale": {"type": "log", "domain": [1, 10000000]}
                           }
                   },
