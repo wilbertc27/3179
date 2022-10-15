@@ -10,7 +10,8 @@
                     {"filter": "datum.TotalCases > 0"}, 
                     {"filter": "datum.TotalDeaths> 0"},
                     {"filter": "Continent_selection == null ||datum.Continent == Continent_selection"},
-                    {"filter": "WHO_Region_Selection == null ||datum['WHO Region'] == WHO_Region_Selection"}
+                    {"filter": "WHO_Region_Selection == null ||datum['WHO Region'] == WHO_Region_Selection"},
+                    {"filter": "datum.Population > Population_Above"}
                   ],
     "params":[
                 {
@@ -62,8 +63,18 @@
                                     ],
                           "name": "WHO Region: "
                         }
+                },
+                {
+                  "name": "Population_Above",
+                  "value": 0,
+                  "bind": {
+                    "input": "range",
+                    "min": 0,
+                    "max": 100000000,
+                    "step": 1000000,
+                    "name": "Minimum Population: "}
                 }
-              ],
+            ],
     "encoding": {
                     "x": 
                           {
@@ -98,11 +109,10 @@
                                                   },
                                         "legend": {"format": ".1s"}
                                       },
-                                "color": {
-                                            "field": "Continent",
-                                            "type": "nominal"
-                                          },
-                                "opacity": {"value": 0.6},
+                                  "color": {
+                                  "field": "Continent", 
+                                  "scale": {"range": ["#4169E1","#C7A317","#7E354D","#6baed6","#FC6C85","#A74AC7"]}},       
+                                "opacity": {"value": 0.5},
                                 "tooltip": [
                                               {"field": "Country/Region", "type": "nominal","title":"Country"},
                                               {"field": "TotalCases", "type": "quantitative", "format": ",","title":"Total Cases"},
@@ -117,15 +127,15 @@
                             }
               },
               {
-                "mark": 
-                        {
-                          "type": "text",
-                          "align": "right",
-                          "baseline": "middle",
-                          "dx": -10,
-                          "fontSize": 12,
-                          "fontStyle": "italic"
-                        },
+			"mark": {"type": "text",
+				 "align": "center",
+				 "baseline": "middle",
+				 "fontSize": 12.5,
+         "dx":-5,
+				 "fontStyle": "italic",
+				 "color":"black",
+				 "fontWeight":"bold"
+				},
                 "encoding": {
                                 "text": {"field": "Country/Region", "type": "nominal"},
                                 "color": {"value": "black"},
