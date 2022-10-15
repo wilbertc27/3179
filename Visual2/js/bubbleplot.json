@@ -130,7 +130,7 @@
 			"mark": {"type": "text",
 				 "align": "center",
 				 "baseline": "middle",
-				 "fontSize": 12.5,
+				 "fontSize": 15,
          "dx":-5,
 				 "fontStyle": "italic",
 				 "color":"black",
