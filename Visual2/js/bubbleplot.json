@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "background":"lightyellow",
-    "width": 630,
-    "height": 550,
+    "width": 1030,
+    "height": 600,
     "data": {
                 "url":"https://raw.githubusercontent.com/wilbertc27/3179/main/Visual2/data/worldometer_data.csv"
             },
