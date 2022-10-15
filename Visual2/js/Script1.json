@@ -1,8 +1,8 @@
 {	
 	"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 	"background":"lightyellow",
-	"width": 1000,
-	"height": 550,
+	"width": 1500,
+	"height": 600,
   "projection": {"type": "equalEarth"},
   "layer":[{"data": {"url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
             				 "format": {"type": "topojson", "feature": "oceans"}},
