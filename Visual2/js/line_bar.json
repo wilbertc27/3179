@@ -101,7 +101,7 @@
     ]},
                 {
                   "width": 1500,
-                  "height": 150,
+                  "height": 100,
                   "mark":  {"type": "bar", "cornerRadiusEnd": 4,"width":3},
                   "params": [{"name": "brush", "select": {"type": "interval","encodings": ["x"]}}],
                   "encoding": {"x": {"field": "Date", "type": "temporal","axis":{"grid":false}},
