@@ -48,15 +48,39 @@
                                       ],
                             "name": "Category:"
                           }
-                  }
-                ],
-  "layer": [{
+                  },
+                  {
+                    "name": "highlight",
+                    "select": {"type": "point", "on": "mouseover"}
+                  },
+                  {"name": "selecting", "select": "point"}
+              ],
+  "layer": [
+    {
     "mark": {"type": "arc", "innerRadius": 30, "stroke": "#fff"}
-  }]
-    ,
-  "encoding": {
+    }
+    ],
+    "encoding": {
     "theta": {"field": "value", "type": "quantitative", "stack": true},
     "radius": {"field": "value", "scale": {"type": "sqrt", "zero": true, "rangeMin": 30}},
+    "fillOpacity": {
+      "condition": {"param": "selecting", "value": 1},
+      "value": 0.7
+    }, "strokeWidth": {
+      "condition": [
+        {
+          "param": "selecting",
+          "empty": false,
+          "value": 2
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 1
+        }
+      ],
+      "value": 0
+    },
     "color": {"field": "WHO Region", "type": "nominal"},
     "tooltip":[
                   {"field": "WHO Region", "type": "nominal",  "title":"WHO Region"},
