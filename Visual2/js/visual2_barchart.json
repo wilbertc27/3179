@@ -81,7 +81,7 @@
       ],
       "value": 0
     },
-    "color": {"field": "WHO Region", "type": "nominal"},
+    "color": {"field": "WHO Region", "type": "nominal","legend":{"orient":"top-left","titleFontSize":15,"labelFontSize":15}},
     "tooltip":[
                   {"field": "WHO Region", "type": "nominal",  "title":"WHO Region"},
                   {"field": "category", "type": "nominal","title":"Category"},
