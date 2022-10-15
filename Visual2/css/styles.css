@@ -4,15 +4,17 @@ body *{
 
 h1 {
     font-weight: 900;
-    font-size: 70px;
+    font-size: 80px;
 }
 
 h2 {
-    font-size: 35px;
+    font-size: 45px;
 }
 
 p {
-    font-size: 20px;
+    font-size: 30px;
+    max-width: 50ch;
+    margin: auto;
 }
 
 body {
@@ -43,7 +45,7 @@ body {
 }
 
 .page {
-    width: 1250px;
+    width: 1750px;
     background-color: lightyellow;
     margin: auto;
     padding: 30px;
@@ -55,7 +57,7 @@ body {
 
 .description h2,
 h1 {
-    margin-top: 0px;
+    margin: 0px;
 }
 
 .description-right {
@@ -68,7 +70,7 @@ h1 {
 }
 
 .pure-g {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .small-font {
