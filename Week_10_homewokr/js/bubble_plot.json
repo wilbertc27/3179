@@ -4,7 +4,7 @@
     "width": 950,
     "height": 600,
     "data": {
-                "url":"https://raw.githubusercontent.com/wilbertc27/3179/main/Visual2/data/worldometer_data.csv"
+                "url":"https://raw.githubusercontent.com/wilbertc27/3179/main/Week_10_homewokr/data/worldometer_data.csv"
             },
     "transform": [
                     {"filter": "datum.TotalCases > 0"}, 
@@ -123,5 +123,5 @@
 
               }
           ],
-    "config": {"view": {"stroke": null}}
+    "config": {}
 }
