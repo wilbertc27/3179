@@ -9,9 +9,7 @@
     "transform": [
                     {"filter": "datum.TotalCases > 0"}, 
                     {"filter": "datum.TotalDeaths> 0"},
-                    {"filter": "Continent_selection == null ||datum.Continent == Continent_selection"},
-                    {"filter": "WHO_Region_Selection == null ||datum['WHO Region'] == WHO_Region_Selection"},
-                    {"filter": "datum.Population > Population_Above"}
+                    {"filter": "Continent_selection == null ||datum.Continent == Continent_selection"}
                   ],
     "params":[
                 {
@@ -38,41 +36,6 @@
                                     ],
                           "name": "Continent: "
                         }
-                },
-                {
-                "name": "WHO_Region_Selection",
-                "bind": {
-                          "input": "select",
-                          "options": [
-                                        null,
-                                        "Africa",
-                                        "Americas",
-                                        "EasternMediterranean",
-                                        "Europe",
-                                        "South-EastAsia",
-                                        "WesternPacific"
-                                      ],
-                          "labels":[
-                                        "Show All",
-                                        "Africa",
-                                        "Americas",
-                                        "EasternMediterranean",
-                                        "Europe",
-                                        "South-EastAsia",
-                                        "WesternPacific"
-                                    ],
-                          "name": "WHO Region: "
-                        }
-                },
-                {
-                  "name": "Population_Above",
-                  "value": 0,
-                  "bind": {
-                    "input": "range",
-                    "min": 0,
-                    "max": 100000000,
-                    "step": 1000000,
-                    "name": "Minimum Population: "}
                 }
             ],
     "encoding": {
@@ -125,40 +88,6 @@
                                               }
                                             ]
                             }
-              },
-              {
-			"mark": {"type": "text",
-				 "align": "center",
-				 "baseline": "middle",
-				 "fontSize": 15,
-         "dx":-5,
-				 "fontStyle": "italic",
-				 "color":"black",
-				 "fontWeight":"bold"
-				},
-                "encoding": {
-                                "text": {"field": "Country/Region", "type": "nominal"},
-                                "color": {"value": "black"},
-                                "opacity": {
-                                              "condition": {
-                                                              "test": "datum['WHO Region'] == 'WesternPacific'&& datum['Continent'] == 'Asia'",
-                                                              "value": 1
-                                                            },
-                                                "value": 0
-                                            },
-                                "tooltip": [
-                                              {"field": "Country/Region", "type": "nominal",  "title":"Country"},
-                                              {"field": "TotalCases", "type": "quantitative", "format": ",","title":"Total Cases"},
-                                              {"field": "TotalDeaths", "type": "quantitative", "format": ",","title":"Total Death"},
-                                              {
-                                                "field": "TotalCases_1M_pop",
-                                                "type": "quantitative",
-                                                "format": ".2f",
-                                                "title":"Total Cases per 1M population"
-                                              }
-                                            ]
-                            }
-
               }
           ],
     "config": {"view": {"stroke": null}}
