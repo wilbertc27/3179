@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "background":"lightyellow",
-    "width":630,
-    "height":550,
+    "width":1030,
+    "height":600,
     "data": {
       "values": [
         {"category": "Total Deaths", "value": 15538,"WHO Region":"Africa"},
