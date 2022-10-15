@@ -77,7 +77,7 @@
 			"mark": {"type": "text",
 				 "align": "center",
 				 "baseline": "middle",
-				 "fontSize": 13.5,
+				 "fontSize": 15,
 				 "fontStyle": "italic",
 				 "color":"black",
 				 "fontWeight":"bold"
