@@ -30,18 +30,19 @@
         {"category": "Active Cases", "value": 80820,"WHO Region":"WesternPacific"}
       ]
     },
-    "transform":[{"filter": "datum['category'] == Cateogory_Selection||Cateogory_Selection == null"}],
+    "transform":[{"filter": "datum['category'] == Category_Selection"}],
     "params":[
                   {
-                  "name": "Cateogory_Selection",
+                  "name": "Category_Selection",
+                  "value":"Total Deaths",
                   "bind": {
                             "input": "select",
-                            "options": [null,
+                            "options": [
                                           "Total Deaths",
                                           "Total Recovered",
                                           "Active Cases"
                                         ],
-                            "labels":["Show All",
+                            "labels":[
                                           "Total Deaths",
                                           "Total Recovered",
                                           "Active Cases"
@@ -65,7 +66,7 @@
     "radius": {"field": "value", "scale": {"type": "sqrt", "zero": true, "rangeMin": 30}},
     "fillOpacity": {
       "condition": {"param": "selecting", "value": 1},
-      "value": 0.7
+      "value": 1
     }, "strokeWidth": {
       "condition": [
         {
