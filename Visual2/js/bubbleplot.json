@@ -131,7 +131,7 @@
 				 "align": "center",
 				 "baseline": "middle",
 				 "fontSize": 15,
-         "dx":-5,
+         "dx":-25,
 				 "fontStyle": "italic",
 				 "color":"black",
 				 "fontWeight":"bold"
@@ -141,11 +141,7 @@
                                 "color": {"value": "black"},
                                 "opacity": {
                                               "condition": {
-                                                              "test": "datum['WHO Region'] == 'WesternPacific'&& datum['Continent'] == 'Asia'",
-                                                              "value": 1
-                                                            },
-                                                "value": 0
-                                            },
+                                                              "test": "datum['Country/Region'] == 'Chile' || datum['Country/Region'] == 'Brazil' || datum['Country/Region'] == 'Peru' || datum['Country/Region'] == 'Oman' ||  datum['Country/Region'] == 'Qatar' ||  datum['Country/Region'] == 'United States of America'","value": 1},"value": 0},
                                 "tooltip": [
                                               {"field": "Country/Region", "type": "nominal",  "title":"Country"},
                                               {"field": "TotalCases", "type": "quantitative", "format": ",","title":"Total Cases"},
