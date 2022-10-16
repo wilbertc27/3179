@@ -3,7 +3,25 @@
 	"background":"lightyellow",
 	"width": 1749,
 	"height": 600,
-  "projection": {"type": "equalEarth"},
+  "projection": {"type": "equalEarth", "scale": {"expr": "zoom"},"center": {"expr": "[x,y]"} 
+},
+  "params": [{
+              "name": "zoom",
+              "value": 250,
+              "bind": {"input": "range","min": 250,"max": 1250,"step": 10,"name":"Zoom:"}
+            },
+            {
+              "name": "x",
+              "value": 0,
+              "bind": {"input": "range","min": -180,"max": 180,"step": 10,
+"name": "X:"}
+            },
+            {
+              "name": "y",
+              "value": 0,
+              "bind": {"input": "range","min": -90,"max": 90,"step": 10,
+"name": "Y:"}
+            }],
   "layer":[
 
     {"data": {"url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
