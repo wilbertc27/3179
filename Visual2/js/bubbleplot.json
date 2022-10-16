@@ -1,163 +1,94 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "background":"lightyellow",
-    "width": 900,
-    "height": 600,
+    "width":1150,
+    "height":600,
     "data": {
-                "url":"https://raw.githubusercontent.com/wilbertc27/3179/main/Visual2/data/worldometer_data.csv"
-            },
-    "transform": [
-                    {"filter": "datum.TotalCases > 0"}, 
-                    {"filter": "datum.TotalDeaths> 0"},
-                    {"filter": "Continent_selection == null ||datum.Continent == Continent_selection"},
-                    {"filter": "WHO_Region_Selection == null ||datum['WHO Region'] == WHO_Region_Selection"},
-                    {"filter": "datum.Population > Population_Above"}
-                  ],
+      "values": [
+        {"category": "Total Deaths", "value": 15538,"WHO Region":"Africa"},
+        {"category": "Total Recovered", "value": 604326,"WHO Region":"Africa"},
+        {"category": "Active Cases", "value": 232162,"WHO Region":"Africa"},
+
+        {"category": "Total Deaths", "value": 384637,"WHO Region":"Americas"},
+        {"category": "Total Recovered", "value": 6259733,"WHO Region":"Americas"},
+        {"category": "Active Cases", "value": 3808482,"WHO Region":"Americas"},
+
+        {"category": "Total Deaths", "value": 42376,"WHO Region":"EasternMediterranean"},
+        {"category": "Total Recovered", "value": 1340094,"WHO Region":"EasternMediterranean"},
+        {"category": "Active Cases", "value": 223396,"WHO Region":"EasternMediterranean"},
+
+        {"category": "Total Deaths", "value": 215564,"WHO Region":"Europe"},
+        {"category": "Total Recovered", "value": 2047446,"WHO Region":"Europe"},
+        {"category": "Active Cases", "value": 566295,"WHO Region":"Europe"},
+
+        {"category": "Total Deaths", "value": 50624,"WHO Region":"South-EastAsia"},
+        {"category": "Total Recovered", "value": 1621081,"WHO Region":"South-EastAsia"},
+        {"category": "Active Cases", "value": 755194,"WHO Region":"South-EastAsia"},
+        
+        {"category": "Total Deaths", "value": 3975,"WHO Region":"WesternPacific"},
+        {"category": "Total Recovered", "value": 182319,"WHO Region":"WesternPacific"},
+        {"category": "Active Cases", "value": 80820,"WHO Region":"WesternPacific"}
+      ]
+    },
+    "transform":[{"filter": "datum['category'] == Category_Selection"}],
     "params":[
-                {
-                "name": "Continent_selection",
-                "bind": {
-                          "input": "select",
-                          "options": [
-                                        null,
-                                        "North America",
-                                        "South America",
-                                        "Europe",
-                                        "Africa",
-                                        "Asia",
-                                        "Australia/Oceania"
-                                      ],
-                          "labels":[
-                                      "Show All",
-                                      "North America",
-                                      "South America",
-                                      "Europe",
-                                      "Africa",
-                                      "Asia",
-                                      "Australia/Oceania"
-                                    ],
-                          "name": "Continent: "
-                        }
-                },
-                {
-                "name": "WHO_Region_Selection",
-                "bind": {
-                          "input": "select",
-                          "options": [
-                                        null,
-                                        "Africa",
-                                        "Americas",
-                                        "EasternMediterranean",
-                                        "Europe",
-                                        "South-EastAsia",
-                                        "WesternPacific"
-                                      ],
-                          "labels":[
-                                        "Show All",
-                                        "Africa",
-                                        "Americas",
-                                        "EasternMediterranean",
-                                        "Europe",
-                                        "South-EastAsia",
-                                        "WesternPacific"
-                                    ],
-                          "name": "WHO Region: "
-                        }
-                },
-                {
-                  "name": "Population_Above",
-                  "value": 0,
+                  {
+                  "name": "Category_Selection",
+                  "value":"Total Deaths",
                   "bind": {
-                    "input": "range",
-                    "min": 0,
-                    "max": 100000000,
-                    "step": 1000000,
-                    "name": "Minimum Population: "}
-                }
-            ],
-    "encoding": {
-                    "x": 
-                          {
-                            "field": "TotalCases",
-                            "type": "quantitative",
-                            "title": "Confirmed Cases",
-                            "axis": {"tickCount": 7,"grid":false,"labelFontSize":15,"titleFontSize":15},
-                            "scale": {"type": "log", "domain": [1, 10000000]}
-                          },
-                    "y": 
-                          {
-                            "field": "TotalDeaths",
-                            "type": "quantitative",
-                            "title": "Death Cases",
-                            "axis": {"tickCount": 6,"grid":false,"labelFontSize":15,"titleFontSize":15},
-                            "scale": {"type": "log", "domain": [1, 10000000]}
+                            "input": "select",
+                            "options": [
+                                          "Total Deaths",
+                                          "Total Recovered",
+                                          "Active Cases"
+                                        ],
+                            "labels":[
+                                          "Total Deaths",
+                                          "Total Recovered",
+                                          "Active Cases"
+                                      ],
+                            "name": "Category:"
                           }
                   },
-    "layer":[
-              {
-                "mark":"circle",
-                "encoding":{
-                              "size": 
-                                      {
-                                        "field": "Population",
-                                        "type": "quantitative",
-                                        "scale": 
-                                                  {
-                                                    "type": "threshold",
-                                                    "domain": [1000000, 10000000, 50000000, 100000000,500000000],
-                                                    "range": [10, 50, 150, 300, 500, 1000]
-                                                  },
-                                        "legend": {"format": ".1s","labelFontSize":15,"titleFontSize":15}
-                                      },
-                                  "color": {
-                                  "field": "Continent", 
-                                  "scale": {"range": ["#4169E1","#C7A317","#7E354D","#6baed6","#FC6C85","#A74AC7"]},"legend":{"labelFontSize":15,"titleFontSize":15}},       
-                                "opacity": {"value": 0.5},
-                                "tooltip": [
-                                              {"field": "Country/Region", "type": "nominal","title":"Country"},
-                                              {"field": "Population", "type": "quantitative", "format": ",","title":"Population"},
-                                              {"field": "TotalCases", "type": "quantitative", "format": ",","title":"Total Cases"},
-                                              {"field": "TotalDeaths", "type": "quantitative", "format": ",","title":"Total Death"},
-                                              {
-                                                "field": "TotalCases_1M_pop",
-                                                "type": "quantitative",
-                                                "format": ".2f",
-                                                "title":"Total Cases per 1M population"
-                                              }
-                                            ]
-                            }
-              },
-              {
-			"mark": {"type": "text",
-				 "align": "center",
-				 "baseline": "middle",
-				 "fontSize": 15,
-         "dx":-25,
-				 "fontStyle": "italic",
-				 "color":"black",
-				 "fontWeight":"bold"
-				},
-                "encoding": {
-                                "text": {"field": "Country/Region", "type": "nominal"},
-                                "color": {"value": "black"},
-                                "opacity": {
-                                              "condition": {
-                                                              "test": "datum['Country/Region'] == 'Chile' || datum['Country/Region'] == 'Brazil' || datum['Country/Region'] == 'Peru' || datum['Country/Region'] == 'Oman' ||  datum['Country/Region'] == 'Qatar' ||  datum['Country/Region'] == 'United States of America'||  datum['Country/Region'] == 'Panama'","value": 1},"value": 0},
-                                "tooltip": [
-                                              {"field": "Country/Region", "type": "nominal",  "title":"Country"},
-                                              {"field": "Population", "type": "quantitative", "format": ",","title":"Population"},
-                                              {"field": "TotalCases", "type": "quantitative", "format": ",","title":"Total Cases"},
-                                              {"field": "TotalDeaths", "type": "quantitative", "format": ",","title":"Total Death"},
-                                              {
-                                                "field": "TotalCases_1M_pop",
-                                                "type": "quantitative",
-                                                "format": ".2f",
-                                                "title":"Total Cases per 1M population"
-                                              }
-                                            ]
-                            }
-
-              }
-          ],
-    "config": {"view": {"stroke": null}}
+                  {
+                    "name": "highlight",
+                    "select": {"type": "point", "on": "mouseover"}
+                  },
+                  {"name": "selecting", "select": "point"}
+              ],
+  "layer": [
+    {
+    "mark": {"type": "arc", "innerRadius": 30, "stroke": "#fff"}
+    }
+    ],
+    "encoding": {
+    "theta": {"field": "value", "type": "quantitative", "stack": "normalize"},
+    "radius": {"field": "value", "scale": {"type": "sqrt", "zero": true, "rangeMin": 30}},
+    "fillOpacity": {
+      "condition": {"param": "selecting", "value": 1},
+      "value": 1
+    }, "strokeWidth": {
+      "condition": [
+        {
+          "param": "selecting",
+          "empty": false,
+          "value": 2
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 1
+        }
+      ],
+      "value": 0
+    },
+    "color": {"field": "WHO Region", "type": "nominal","legend":{"orient":"top-right","titleFontSize":15,"labelFontSize":15},"scale": {"range": ["#6698FF","#C88141","#FA8072","#872657","#FF00FF","#806517"]}},"opacity": {"value":0.5},
+    "tooltip":[
+                  {"field": "WHO Region", "type": "nominal",  "title":"WHO Region"},
+                  {"field": "category", "type": "nominal","title":"Category"},
+                  {"field": "value", "type": "quantitative", "format": ",","title":"Value"}]
+    },
+   "config": {
+  "style": {
+  }
 }
