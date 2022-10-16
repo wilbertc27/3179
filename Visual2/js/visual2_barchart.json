@@ -62,7 +62,7 @@
     }
     ],
     "encoding": {
-    "theta": {"field": "value", "type": "quantitative", "stack": true},
+    "theta": {"field": "value", "type": "quantitative", "stack": "normalize"},
     "radius": {"field": "value", "scale": {"type": "sqrt", "zero": true, "rangeMin": 30}},
     "fillOpacity": {
       "condition": {"param": "selecting", "value": 1},
