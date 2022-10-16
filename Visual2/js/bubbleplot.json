@@ -105,7 +105,7 @@
                                                   {
                                                     "type": "threshold",
                                                     "domain": [1000000, 10000000, 50000000, 100000000,500000000],
-                                                    "range": [10, 50, 150, 300, 500,600]
+                                                    "range": [10, 50, 150, 300, 500, 1000]
                                                   },
                                         "legend": {"format": ".1s","labelFontSize":15,"titleFontSize":15}
                                       },
@@ -115,6 +115,7 @@
                                 "opacity": {"value": 0.5},
                                 "tooltip": [
                                               {"field": "Country/Region", "type": "nominal","title":"Country"},
+                                              {"field": "Population", "type": "quantitative", "format": ",","title":"Population"},
                                               {"field": "TotalCases", "type": "quantitative", "format": ",","title":"Total Cases"},
                                               {"field": "TotalDeaths", "type": "quantitative", "format": ",","title":"Total Death"},
                                               {
@@ -141,9 +142,10 @@
                                 "color": {"value": "black"},
                                 "opacity": {
                                               "condition": {
-                                                              "test": "datum['Country/Region'] == 'Chile' || datum['Country/Region'] == 'Brazil' || datum['Country/Region'] == 'Peru' || datum['Country/Region'] == 'Oman' ||  datum['Country/Region'] == 'Qatar' ||  datum['Country/Region'] == 'United States of America'","value": 1},"value": 0},
+                                                              "test": "datum['Country/Region'] == 'Chile' || datum['Country/Region'] == 'Brazil' || datum['Country/Region'] == 'Peru' || datum['Country/Region'] == 'Oman' ||  datum['Country/Region'] == 'Qatar' ||  datum['Country/Region'] == 'United States of America'||  datum['Country/Region'] == 'Panama'","value": 1},"value": 0},
                                 "tooltip": [
                                               {"field": "Country/Region", "type": "nominal",  "title":"Country"},
+                                              {"field": "Population", "type": "quantitative", "format": ",","title":"Population"},
                                               {"field": "TotalCases", "type": "quantitative", "format": ",","title":"Total Cases"},
                                               {"field": "TotalDeaths", "type": "quantitative", "format": ",","title":"Total Death"},
                                               {
