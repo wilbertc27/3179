@@ -61,12 +61,15 @@ h1 {
 }
 
 .description-right {
-    padding: 40px
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .description-left {
-    padding-right: 20px;
-    padding-top: 100px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .pure-g {
