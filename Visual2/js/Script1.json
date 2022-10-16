@@ -95,7 +95,7 @@
                    "text":{"field": "properties.NAME", "type": "nominal"},
                    "opacity": {
                      "condition": {
-                       "test": "datum['properties.NAME'] == 'Chile' || datum['properties.NAME'] == 'Brazil' || datum['properties.NAME'] == 'Peru' || datum['properties.NAME'] == 'Oman' ||  datum['properties.NAME'] == 'Qatar' ||  datum['properties.NAME'] == 'United States of America'","value": 1},"value": 0}}}
+                       "test": "datum['properties.NAME'] == 'Chile' || datum['properties.NAME'] == 'Brazil' || datum['properties.NAME'] == 'Peru' || datum['properties.NAME'] == 'Oman' ||  datum['properties.NAME'] == 'Qatar' ||  datum['properties.NAME'] == 'United States of America'||  datum['properties.NAME'] == 'Panama'","value": 1},"value": 0}}}
         ],
     "config": {"legend":{"direction":"horizontal","orient":"bottom","titleFontSize":15,"labelFontSize":15}}
 }
