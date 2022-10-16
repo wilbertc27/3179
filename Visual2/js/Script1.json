@@ -7,8 +7,8 @@
 },
   "params": [{
               "name": "zoom",
-              "value": 250,
-              "bind": {"input": "range","min": 250,"max": 1250,"step": 10,"name":"Zoom:"}
+              "value": 220,
+              "bind": {"input": "range","min": 220,"max": 1250,"step": 10,"name":"Zoom:"}
             },
             {
               "name": "x",
