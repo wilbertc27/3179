@@ -82,7 +82,7 @@
       ],
       "value": 0
     },
-    "color": {"field": "WHO Region", "type": "nominal","legend":{"orient":"top-right","titleFontSize":15,"labelFontSize":15}},
+    "color": {"field": "WHO Region", "type": "nominal","legend":{"orient":"top-right","titleFontSize":15,"labelFontSize":15},"scale": {"range": ["#6698FF","#C88141","#FA8072","#872657","#FF00FF","#806517"]}},"opacity": {"value":0.5},
     "tooltip":[
                   {"field": "WHO Region", "type": "nominal",  "title":"WHO Region"},
                   {"field": "category", "type": "nominal","title":"Category"},
@@ -91,5 +91,4 @@
    "config": {
   "style": {
   }
-}
 }
