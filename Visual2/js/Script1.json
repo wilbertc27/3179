@@ -4,28 +4,30 @@
 	"width": 1600,
 	"height": 600,
   "projection": {"type": "equalEarth"},
-  "layer":[{"data": {"url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
-            				 "format": {"type": "topojson", "feature": "oceans"}},
-             "mark": {"type": "geoshape", "fill": "#6cc6f0"}
-            },
+  "layer":[
 
-				    {"data": {"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/3179_assignment_2_dataset/ne_110m.json",
-								      "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}},
-					"mark": {"type": "geoshape", "fill": "","stroke":"lightgray"}
-            },
+    {"data": {"url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+              "format": {"type": "topojson", "feature": "oceans"}},
+     "mark": {"type": "geoshape", "fill": "#6cc6f0"}
+    },
 
-            {"data": {"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/3179_assignment_2_dataset/ne_110m (1).json",
-                      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}},
-             "transform": [{"calculate": "'Data is not available in ' + datum.properties.NAME","as": "note"}],
-             "mark": {"type": "geoshape", "fill": "lightgray","stroke":"white"},
-             "encoding": {"tooltip": {"field": "note"}}
-            },
-				{
-				"data": {
-							"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/3179_assignment_2_dataset/ne_110m (1).json",
-							"format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-						},
-                "transform":[
+    {"data": {"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/3179_assignment_2_dataset/ne_110m.json",
+							"format": {"type": "topojson", "feature": "ne_110m_graticules_30"}},
+		 "mark": {"type": "geoshape", "fill": "","stroke":"lightgray"}
+    },
+
+    {"data": {"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/3179_assignment_2_dataset/ne_110m (1).json",
+              "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}},
+     "transform": [
+       {"calculate": "'Data is not available in ' + datum.properties.NAME",
+        "as": "note"}],
+     "mark": {"type": "geoshape", "fill": "lightgray","stroke":"white"},
+     "encoding": {"tooltip": {"field": "note"}}
+    },
+
+		{"data": {"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/3179_assignment_2_dataset/ne_110m (1).json",
+							"format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}},
+     "transform":[
 								{
 									"lookup": "properties.NAME",
 									"from": {
@@ -54,53 +56,28 @@
 								}
             	},
       {	
-      "data": {
-							"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/3179_assignment_2_dataset/ne_110m (1).json",
-							"format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-						},
+      "data": {"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/3179_assignment_2_dataset/ne_110m (1).json",
+							 "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}},
 			"transform": [
-			  {
-				"lookup": "properties.NAME",
-				"from": {
-				  "data": {"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/Visual2/data/CountryInformation.csv"},
-				  "key": "name",
-				  "fields": ["latitude", "longitude"]
-				}
-			  },								{
-					"lookup": "properties.NAME",
-					"from": {
-									"data": {"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/Visual2/data/worldometer_data.csv"},
-									"key": "Country/Region",
-									"fields": ["TotalCases_1M_pop"]
-									}
-								}
-			],
+        {
+          "lookup": "properties.NAME",
+          "from": {"data": {"url": "https://raw.githubusercontent.com/wilbertc27/3179/main/Visual2/data/CountryInformation.csv"},
+                   "key": "name",
+                   "fields": ["latitude", "longitude"]}}],
 			"mark": {"type": "text",
-				 "align": "center",
-				 "baseline": "middle",
-				 "fontSize": 15,
-				 "fontStyle": "italic",
-				 "color":"black",
-				 "fontWeight":"bold"
-				},
-			"encoding": {
-			  "longitude": {"field": "longitude", "type": "quantitative"},
-			  "latitude": {"field": "latitude", "type": "quantitative"},
-			  "text":{"field": "properties.NAME", "type": "nominal"},
-			  "opacity": {
-				"condition": {
-				  "test": "datum['properties.NAME'] == 'Chile' || datum['properties.NAME'] == 'Brazil' || datum['properties.NAME'] == 'Peru' || datum['properties.NAME'] == 'Oman' ||  datum['properties.NAME'] == 'Qatar' ||  datum['properties.NAME'] == 'United States of America'",
-				  "value": 1
-				},
-				"value": 0
-			  },
-        								"tooltip": [
-												{"field": "properties.NAME", "type": "nominal", "title":"Country"},
-												{"field": "TotalCases_1M_pop", "type": "quantitative","title":"Total Cases per 1M population"}
-									
-											]
-			}
-		  }
+				       "align": "center",
+               "baseline": "middle",
+               "fontSize": 15,
+               "fontStyle": "italic",
+               "color":"black",
+               "fontWeight":"bold"
+              },
+			"encoding": {"longitude": {"field": "longitude", "type": "quantitative"},
+                   "latitude": {"field": "latitude", "type": "quantitative"},
+                   "text":{"field": "properties.NAME", "type": "nominal"},
+                   "opacity": {
+                     "condition": {
+                       "test": "datum['properties.NAME'] == 'Chile' || datum['properties.NAME'] == 'Brazil' || datum['properties.NAME'] == 'Peru' || datum['properties.NAME'] == 'Oman' ||  datum['properties.NAME'] == 'Qatar' ||  datum['properties.NAME'] == 'United States of America'","value": 1},"value": 0}}}
         ],
     "config": {"view": {"stroke": null},"legend":{"direction":"horizontal","orient":"bottom","titleFontSize":15,"labelFontSize":15}}
 }
